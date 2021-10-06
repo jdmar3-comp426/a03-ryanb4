@@ -46,6 +46,7 @@ export function maxAndMin(numbers) {
     let length = numbers.length;
     let max = -1000000;
     let min = 1000000;
+    let obj = new Object();
 
     if(numbers.length == 0) {
         return;
@@ -61,8 +62,11 @@ export function maxAndMin(numbers) {
     }
     max = Math.max(...numbers);
     min = Math.min(...numbers);
+    
+    obj.min = min;
+    obj.max = max;
 
-    return(min, max);
+    return obj;
 }
 
 /**
