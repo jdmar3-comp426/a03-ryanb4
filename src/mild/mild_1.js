@@ -54,6 +54,9 @@ export function maxAndMin(numbers) {
             min = numbers[i];
         }
     }
+    max = Math.max(...numbers);
+    min = Math.min(...numbers);
+
     return(min, max);
 }
 
