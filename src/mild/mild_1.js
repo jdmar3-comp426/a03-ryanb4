@@ -46,6 +46,11 @@ export function maxAndMin(numbers) {
     let length = numbers.length;
     let max = -1000000;
     let min = 1000000;
+
+    if(numbers.length == 0) {
+        return;
+    }
+
     for (let i = 0; i < length; i++) {
         if (numbers[i] > max) {
             max = numbers[i];
@@ -75,6 +80,10 @@ export function countArray(array) {
     let newValue = 0;
     let newArray = [];
     let obj = new Object();
+
+    if (array.length == 0) {
+        return;
+    } 
 
     ///iterate through the array
     for (let i = 0; i < array.length; i++) {

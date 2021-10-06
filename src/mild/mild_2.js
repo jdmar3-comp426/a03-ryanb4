@@ -18,8 +18,8 @@ export function identifyVariable(variable) {
       obj.type = number;
    } else if (typeof variable == string) {
       obj.type = string;
-   } else if (typeof variable == function) {
-      obj.type = function;
+   } else if (typeof variable == 'function') {
+      obj.type = "function";
    } else if (typeof variable == symbol) {
       obj.type = symbol;
    } else if (typeof variable == bigint) {
@@ -62,7 +62,7 @@ export function identifyArray(array) {
  obj now does not contain the `password` field
  */
 export function removeKey(object, key) {
-
+   delete object.password;
 }
 
 /**
