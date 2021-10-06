@@ -63,8 +63,9 @@ export function maxAndMin(numbers) {
     max = Math.max(...numbers);
     min = Math.min(...numbers);
     
-    obj.min = min;
     obj.max = max;
+    obj.min = min;
+  
 
     return obj;
 }
