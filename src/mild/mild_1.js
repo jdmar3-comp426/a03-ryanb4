@@ -74,7 +74,7 @@ export function countArray(array) {
     let map = new Map();
     let newValue = 0;
     let newArray = [];
-    let obj = new Object;
+    let obj = new Object();
 
     ///iterate through the array
     for (let i = 0; i < array.length; i++) {
