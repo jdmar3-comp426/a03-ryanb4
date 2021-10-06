@@ -71,5 +71,44 @@ export function maxAndMin(numbers) {
  *
  */
 export function countArray(array) {
+    let map = new Map();
+    let newValue = 0;
+    let newArray = [];
+    let obj = new Object;
+
+    ///iterate through the array
+    for (let i = 0; i < array.length; i++) {
+
+        //check if the array item is in the map yet
+        if (map.has(array[i])) {
+            //if the key is in the map, then get the value
+            newValue = map.get(array[i]);
+            
+            //increment the value
+            newValue++;
+
+            //store the new value back in the map
+            map.set(array[i], newValue);
+
+            //do not place in new array bc it is already in there
+        } else {
+            //if the key is not in the map, place it in the map with a value of 1
+            map.set(array[i], 1);
+
+            //store the key in the newArray
+            newArray.push(array[i]);
+        }
+
+    }
+
+    //now i need to return everything from the newArray
+    for (let i = 0; i < newArray.length; i++) {
+        obj.newArray[i] = map.get(newArray[i]);
+    }
+
+    return obj;
+    
+    
+
 
 }
