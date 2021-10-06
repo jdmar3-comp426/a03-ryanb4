@@ -32,6 +32,7 @@ export function getIncreasingArray(startNumber, endNumber) {
         increasingArray[startNumber];
         startNumber++;
     }
+    return increasingArray;
 }
 
 /**
@@ -42,7 +43,18 @@ export function getIncreasingArray(startNumber, endNumber) {
  * and https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
  */
 export function maxAndMin(numbers) {
-
+    let length = numbers.length;
+    let max = Math.min;
+    let min = Math.max;
+    for (let i = 0; i < length; i++) {
+        if (numbers[i] > max) {
+            max = numbers[i];
+        }
+        if (numbers[i] < min) {
+            min = numbers[i];
+        }
+    }
+    return(min, max);
 }
 
 /**
