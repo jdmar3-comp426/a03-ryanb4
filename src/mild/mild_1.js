@@ -124,5 +124,4 @@ export function countArray(array) {
     
     
 
-
 }

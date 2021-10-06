@@ -53,25 +53,16 @@ export function getMedian(array) {
  */
 export function getStatistics(array) {
 
-let length = array.length;
-let sum = getSum(array);
-let max = 0;
-let min = 0;
-let variance = 0;
-let mean = 0;
-let median = getMedian(array);
-let stddev = 0;
+    let statsObj = new Object();
+    let minMaxObj = maxAndMin(array);
 
-let minMaxObj = maxAndMin(array);
-
-max = minMaxObj.max;
-min = minMaxObj.min;
-
-
-
-
-
-
-
+    statsObj.length = array.length;
+    statsObj.sum = getSum(array);
+    statsObj.mean = sum / length;
+    statsObj.median = getMedian(array);
+    statsObj.min = minMaxObj.min;
+    statsObj.max = minMaxObj.max;
+    statsObj.variance = variance(array, mean);
+    statsObj.stddev = Math.sqrt(variance);
 }
 
