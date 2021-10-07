@@ -90,8 +90,12 @@ export function countArray(array) {
         return;
     } 
 
+
     ///iterate through the array
     for (let i = 0; i < array.length; i++) {
+
+
+
 
         //check if the array item is in the map yet
         if (map.has(array[i])) {
@@ -117,11 +121,8 @@ export function countArray(array) {
 
     //now i need to return everything from the newArray
     for (let i = 0; i < newArray.length; i++) {
-        obj.newArray[i] = map.get(newArray[i]);
+        obj[newArray[i]] = map.get(newArray[i]);
     }
 
     return obj;
-    
-    
-
 }
