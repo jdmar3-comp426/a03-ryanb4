@@ -27,6 +27,8 @@ export function identifyVariable(variable) {
       obj.type = 'bigint';
    }
 
+   obj.value = variable;
+
    return obj;
 }
 
@@ -45,7 +47,13 @@ export function identifyVariable(variable) {
 
  */
 export function identifyArray(array) {
+   let tempObj = new Object();
 
+   for (let i = 0; i < array.length; i++) {
+      
+
+
+   }
 }
 
 /**
