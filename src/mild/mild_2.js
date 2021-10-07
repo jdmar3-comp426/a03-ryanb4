@@ -6,25 +6,28 @@
  * returns: { type: 'number', value: 4 }
  */
 export function identifyVariable(variable) {
-   let obj = new Object();
+   
+   console.log("hello");
 
-   if (typeof variable == undefined) {
-      obj.type = undefined;
-   } else if (typeof variable == object) {
-      obj.type = object;
-   } else if (typeof variable == boolean) {
-      obj.type = boolean;
-   } else if (typeof variable == number) {
-      obj.type = number;
-   } else if (typeof variable == string) {
-      obj.type = string;
-   } else if (typeof variable == 'function') {
-      obj.type = "function";
-   } else if (typeof variable == symbol) {
-      obj.type = symbol;
-   } else if (typeof variable == bigint) {
-      obj.type = bigint;
-   }
+   // if (typeof variable == undefined) {
+   //    obj.type = undefined;
+   // } else if (typeof variable == object) {
+   //    obj.type = object;
+   // } else if (typeof variable == boolean) {
+   //    obj.type = boolean;
+   // } else if (typeof variable == number) {
+   //    obj.type = number;
+   // } else if (typeof variable == string) {
+   //    obj.type = string;
+   // } else if (typeof variable == 'function') {
+   //    obj.type = "function";
+   // } else if (typeof variable == symbol) {
+   //    obj.type = symbol;
+   // } else if (typeof variable == bigint) {
+   //    obj.type = bigint;
+   // }
+
+
 }
 
 

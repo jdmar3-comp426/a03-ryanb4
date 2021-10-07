@@ -1,6 +1,8 @@
 import {countArray, maxAndMin, sumToString} from "./src/mild/mild_1.js";  
+import { identifyArray, identifyVariable } from "./src/mild/mild_2.js";
   
 
-//countArray([3, 6, 3, 2, 2, 3, 'some', 'hello', 'some', [1, 2]])
 
-console.log(countArray([3, 6, 3, 2, 2, 3, 'some', 'hello', 'some', [1, 2]]));
+//console.log(identifyVariable(4));
+
+identifyVariable(4);
