@@ -7,27 +7,27 @@
  */
 export function identifyVariable(variable) {
    
-   console.log("hello");
+   let obj = new Object();
 
-   // if (typeof variable == undefined) {
-   //    obj.type = undefined;
-   // } else if (typeof variable == object) {
-   //    obj.type = object;
-   // } else if (typeof variable == boolean) {
-   //    obj.type = boolean;
-   // } else if (typeof variable == number) {
-   //    obj.type = number;
-   // } else if (typeof variable == string) {
-   //    obj.type = string;
-   // } else if (typeof variable == 'function') {
-   //    obj.type = "function";
-   // } else if (typeof variable == symbol) {
-   //    obj.type = symbol;
-   // } else if (typeof variable == bigint) {
-   //    obj.type = bigint;
-   // }
+   if (typeof variable == 'undefined') {
+      obj.type = 'undefined';
+   } else if (typeof variable == 'object') {
+      obj.type = 'object';
+   } else if (typeof variable == 'boolean') {
+      obj.type = 'boolean';
+   } else if (typeof variable == 'number') {
+      obj.type = 'number';
+   } else if (typeof variable == 'string') {
+      obj.type = 'string';
+   } else if (typeof variable == 'function') {
+      obj.type = 'function';
+   } else if (typeof variable == 'symbol') {
+      obj.type = 'symbol';
+   } else if (typeof variable == 'bigint') {
+      obj.type = 'bigint';
+   }
 
-
+   return obj;
 }
 
 
@@ -111,11 +111,11 @@ export function removeKeyNonDestructive(object, key) {
  */
 export function removeKeys(object, keyList) {
 
-   let key = '';
+   // let key = '';
 
-   for (let i =0; i < keyList.length; i++) {
-      key = keyList[i];
+   // for (let i =0; i < keyList.length; i++) {
+   //    key = keyList[i];
 
-      const {key, ...object};
-   }
+   //    const {key, ...object};
+   // }
 }
