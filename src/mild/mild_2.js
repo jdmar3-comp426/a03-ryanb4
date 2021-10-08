@@ -50,10 +50,9 @@ export function identifyArray(array) {
    let tempObj = new Object();
 
    for (let i = 0; i < array.length; i++) {
-      
-
-
+      array[i] = identifyVariable(array[i]);
    }
+   return array;
 }
 
 /**
@@ -73,7 +72,7 @@ export function identifyArray(array) {
  obj now does not contain the `password` field
  */
 export function removeKey(object, key) {
-   // delete object.password;
+   delete object.password;
 }
 
 /**
@@ -92,8 +91,12 @@ export function removeKey(object, key) {
  obj will not have the `password` field only because it was assigned the result of the function.
  If only `removeKeyNonDestructive` was called, nothing would have changed.
  */
-export function removeKeyNonDestructive(object, key) {
-   // const {password, ...newObject} = object;
+export function removeKeyNonDestructive(object, key) {   
+
+   var {key, ...rest} = object;
+
+   console.log(object);
+   console.log(rest);
 }
 
 /**

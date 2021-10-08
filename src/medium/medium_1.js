@@ -11,7 +11,7 @@ import {variance} from "./data/stats_helpers.js";
 export function getSum(array) {
     let sum = 0;
     for(let i = 0; i < array.length; i++) {
-        array[i] += sum;
+        sum += array[i];
     }
     return sum;
 }
@@ -26,10 +26,10 @@ export function getSum(array) {
  * console.log(getMedian(array)); // 4.5
  */
 export function getMedian(array) {
-    let sortedArray = array.sort();
-    let middle = Math.floor(array.length / 2);
+    // let sortedArray = array.sort();
+    // let middle = Math.floor(array.length / 2);
 
-    return sortedArray[middle];
+    // return sortedArray[middle];
 }
 
 /**
@@ -53,16 +53,16 @@ export function getMedian(array) {
  */
 export function getStatistics(array) {
 
-    let statsObj = new Object();
-    let minMaxObj = maxAndMin(array);
+    // let statsObj = new Object();
+    // let minMaxObj = maxAndMin(array);
 
-    statsObj.length = array.length;
-    statsObj.sum = getSum(array);
-    statsObj.mean = sum / length;
-    statsObj.median = getMedian(array);
-    statsObj.min = minMaxObj.min;
-    statsObj.max = minMaxObj.max;
-    statsObj.variance = variance(array, mean);
-    statsObj.stddev = Math.sqrt(variance);
+    // statsObj.length = array.length;
+    // statsObj.sum = getSum(array);
+    // statsObj.mean = sum / length;
+    // statsObj.median = getMedian(array);
+    // statsObj.min = minMaxObj.min;
+    // statsObj.max = minMaxObj.max;
+    // statsObj.variance = variance(array, mean);
+    // statsObj.stddev = Math.sqrt(variance);
 }
 
