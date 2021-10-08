@@ -18,7 +18,36 @@ queries.
  *
  */
 export function searchHighPower(car_data, minHorsepower, minTorque) {
+    let carArray = [];
+    let currCar;
 
+    //add all the cars to the car array
+    for (let i = 0; i < car_data.length; i++) {
+        //variable for the current car
+        currCar = car_data[i];
+
+        //if the car has the required horsepower and torque, add it to the car array
+        if (currCar.horsepower >= minHorsepower && currCar.torque >= minTorque) {
+            carArray.push(currCar);
+        }
+    }
+
+    //create temp car obj
+    let tempCarObj = new Object();
+
+    //sort the car array
+    for (let i = 0; i < carArray.length - 1; i++) {
+        for (let j = 0; j < carArray.length - 1; j++) {
+
+            //largest horsepower to smallest
+            if (carArray[j].horsepower <  carArray[j + 1].horsepower) {
+                tempCarObj = carArray[j + 1];
+                carArray[j + 1] = carArray[j];
+                carArray[j] = tempCarObj;
+            }
+        }
+    }
+    return carArray;
 }
 
 
@@ -33,7 +62,36 @@ export function searchHighPower(car_data, minHorsepower, minTorque) {
  *
  */
 export function searchMpg(car_data, minCity, minHighway) {
+    let carArray = [];
+    let currCar;
 
+    //add all the cars to the car array
+    for (let i = 0; i < car_data.length; i++) {
+        //variable for the current car
+        currCar = car_data[i];
+
+        //if the car has the required hw and city, add it to the car array
+        if (currCar.city_mpg >= minCity && currCar.highway_mpg >= minHighway) {
+            carArray.push(currCar);
+        }
+    }
+
+    //create temp car obj
+    let tempCarObj = new Object();
+
+    //sort the car array
+    for (let i = 0; i < carArray.length - 1; i++) {
+        for (let j = 0; j < carArray.length - 1; j++) {
+
+            //largest horsepower to smallest
+            if (carArray[j].highway_mpg <  carArray[j + 1].highway_mpg) {
+                tempCarObj = carArray[j + 1];
+                carArray[j + 1] = carArray[j];
+                carArray[j] = tempCarObj;
+            }
+        }
+    }
+    return carArray;
 }
 
 
@@ -47,6 +105,26 @@ export function searchMpg(car_data, minCity, minHighway) {
  */
 export function searchName(car_data, searchTerm) {
 
+    let carArray = [];
+    let carID;
+
+    //make the term all lower case
+    searchTerm = searchTerm.toLowerCase();
+
+
+    //loop through the data 
+    for (let i = 0; i < car_data.length; i++) {
+
+        //change the car id to lowercase
+        carID = car_data[i].id.toLowerCase();
+
+        //if the car id has the search term then add the car to the array
+        if (carID.includes(searchTerm)) {
+            carArray.push(car_data[i]);
+        }
+    }
+
+    return carArray;
 }
 
 
@@ -59,5 +137,27 @@ export function searchName(car_data, searchTerm) {
  * @returns {[]} an array of car objects
  */
 export function searchByYear(car_data, years) {
+    //variables
+    let carArray = [];
+    let carYear;
 
+    //sort the years array
+    years.sort;
+
+    //reverse the years array (this exists??)
+    years.reverse;
+
+    //loop through the years array
+    for (let i = 0; i < years.length; i++) {
+        //loop through the data
+        for (let j = 0; j < car_data.length; j++) {
+
+            //if the car year is correct then add it to the car array
+            if (car_data[j].year == years[i]) {
+                carArray.push(car_data[j]);
+            }
+        }
+    }
+
+    return carArray;
 }
