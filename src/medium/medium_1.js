@@ -26,10 +26,17 @@ export function getSum(array) {
  * console.log(getMedian(array)); // 4.5
  */
 export function getMedian(array) {
-    // let sortedArray = array.sort();
-    // let middle = Math.floor(array.length / 2);
+    let sortedArray = array.sort();
+    let v1, v2;
 
-    // return sortedArray[middle];
+    //if the array is odd then the median is the middle number
+    if (array.length % 2 == 1) {
+        return sortedArray[Math.floor(array.length / 2)];
+    } else {
+        v1 = array.length / 2
+        v2 = v1 - 1;
+        return (sortedArray[v1] - sortedArray[v2]) / 2 + sortedArray[v2];
+    }
 }
 
 /**
@@ -53,16 +60,18 @@ export function getMedian(array) {
  */
 export function getStatistics(array) {
 
-    // let statsObj = new Object();
-    // let minMaxObj = maxAndMin(array);
+    let statsObj = new Object();
+    let minMaxObj = maxAndMin(array);
 
-    // statsObj.length = array.length;
-    // statsObj.sum = getSum(array);
-    // statsObj.mean = sum / length;
-    // statsObj.median = getMedian(array);
-    // statsObj.min = minMaxObj.min;
-    // statsObj.max = minMaxObj.max;
-    // statsObj.variance = variance(array, mean);
-    // statsObj.stddev = Math.sqrt(variance);
+    statsObj.length = array.length;
+    statsObj.sum = getSum(array);
+    statsObj.mean = statsObj.sum / statsObj.length;
+    statsObj.median = getMedian(array);
+    statsObj.min = minMaxObj.min;
+    statsObj.max = minMaxObj.max;
+    statsObj.variance = variance(array, statsObj.mean);
+    statsObj.stddev = Math.sqrt(statsObj.variance);
+
+    return statsObj;
 }
 
