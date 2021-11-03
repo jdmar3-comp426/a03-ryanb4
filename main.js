@@ -7,18 +7,5 @@ import { identifyArray, identifyVariable, removeKey, removeKeyNonDestructive, re
   
 
 
-
-//console.log(searchByYear(mpg_data, [2012, 2010]));
-
-let obj = {
-    name: 'Mr. Boss',
-    title: 'boss',
-    age: 33,
-    password: 'pass123'
-};
-
-console.log(obj);
-
-obj = removeKeys(obj, ['password', 'age']);
-
-console.log(obj);
+let array = [14,8,5,7,7,5,2,7,5,3,47,9];
+console.log(getMedian(array));

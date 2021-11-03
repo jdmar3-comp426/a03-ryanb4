@@ -26,7 +26,12 @@ export function getSum(array) {
  * console.log(getMedian(array)); // 4.5
  */
 export function getMedian(array) {
-    let sortedArray = array.sort();
+    let sortedArray = array.sort(
+        function(a, b) {
+            return a - b;
+        }
+    );
+    
     let v1, v2;
 
     //if the array is odd then the median is the middle number
