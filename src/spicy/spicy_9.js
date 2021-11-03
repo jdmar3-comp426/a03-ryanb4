@@ -90,6 +90,14 @@ export const tenTimesFifty = () => {
  */
 export const everyEven = (arr, test) => {
 
+    for (let i = 0; i < arr.length; i+=2) {
+        if (!test) {
+            return false;
+        }
+    }
+    return true;
+
+
 };
 
 
