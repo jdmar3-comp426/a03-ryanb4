@@ -31,7 +31,7 @@ export function getMedian(array) {
             return a - b;
         }
     );
-    
+
     let v1, v2;
 
     //if the array is odd then the median is the middle number

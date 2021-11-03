@@ -7,5 +7,13 @@ import { identifyArray, identifyVariable, removeKey, removeKeyNonDestructive, re
   
 
 
-let array = [14,8,5,7,7,5,2,7,5,3,47,9];
-console.log(getMedian(array));
+
+
+
+// let array = [3,2,4,5,5,5];
+// let minMaxObj = maxAndMin(array);
+// console.log(minMaxObj);
+
+
+
+console.log(getStatistics([14,8,5,7,7,5,2,7,5,3,47,9]));
