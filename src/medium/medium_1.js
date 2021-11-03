@@ -75,7 +75,7 @@ export function getStatistics(array) {
     statsObj.min = minMaxObj.min;
     statsObj.max = minMaxObj.max;
     statsObj.variance = variance(array, statsObj.mean);
-    statsObj.stddev = Math.sqrt(statsObj.variance);
+    statsObj.standard_deviation = Math.sqrt(statsObj.variance);
 
     return statsObj;
 }
