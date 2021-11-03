@@ -149,7 +149,22 @@ export const someEven = (arr, test) => {
  *       -->  { pass: [1, 5, 31], fail: [90] }
  */
 export const filter = (arr, test) => {
+    let obj = new Object();
+    let passArray = [];
+    let failArray = [];
 
+    for (let i = 0; i < arr.length; i++) {
+        if (test(arr[i])) {
+            passArray.push(arr[i]);
+        } else {
+            failArray.push(arr[i]);
+        }
+    }
+
+    obj.pass = passArray;
+    obj.fail = failArray;
+
+    return obj;
 };
 
 
