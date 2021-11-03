@@ -119,9 +119,10 @@ export function removeKeyNonDestructive(object, key) {
  */
 export function removeKeys(object, keyList) {
 
-   const { [keyList]: foo, ...newObject } = object;
-   return newObject;
+   //loop through key list and call removekeynondestructive each time
+   for (let i = 0; i < keyList.length; i++) {
+      object = removeKeyNonDestructive(object, keyList[i]);
+   }
 
-
-
+   return object;
 }
