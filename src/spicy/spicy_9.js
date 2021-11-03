@@ -16,6 +16,11 @@
  */
 export const repeat = (fn, n, ...params) => {
 
+    for (let i = 0; i < n; i++) {
+        fn(params);
+    }
+
+
 };
 
 
