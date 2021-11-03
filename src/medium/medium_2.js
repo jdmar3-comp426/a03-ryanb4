@@ -148,8 +148,6 @@ export function getAvgMpgByYearAndHybrid() {
         }
     );
 
-    console.log(yearArray);
-
     //create mpg variables
     let hybridCityMpg = 0;
     let hybridHwMpg = 0;
