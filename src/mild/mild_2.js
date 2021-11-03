@@ -93,10 +93,13 @@ export function removeKey(object, key) {
  */
 export function removeKeyNonDestructive(object, key) {   
 
-   var {key, ...rest} = object;
+   const { [key]: foo, ...newObject } = object;
 
-   // console.log(object);
-   // console.log(rest);
+
+   //var {key, ...rest} = object;
+
+   return newObject;
+
 }
 
 /**

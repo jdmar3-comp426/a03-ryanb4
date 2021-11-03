@@ -8,4 +8,17 @@ import { identifyArray, identifyVariable, removeKey, removeKeyNonDestructive } f
 
 
 
-console.log(searchByYear(mpg_data, [2012, 2010]));
+//console.log(searchByYear(mpg_data, [2012, 2010]));
+
+let obj = {
+    name: 'Mr. Boss',
+    title: 'boss',
+    age: 33,
+    password: 'pass123'
+};
+
+console.log(obj);
+
+obj = removeKeyNonDestructive(obj, 'password');
+
+console.log(obj);
