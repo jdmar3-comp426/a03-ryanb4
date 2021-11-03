@@ -4,11 +4,11 @@ import { allCarStats, getAvgMpgByYearAndHybrid, getMakerHybrids, moreStats } fro
 import { searchByYear, searchHighPower, searchName } from "./src/medium/medium_3.js";
 import {countArray, maxAndMin, sumToString} from "./src/mild/mild_1.js";  
 import { identifyArray, identifyVariable, removeKey, removeKeyNonDestructive, removeKeys } from "./src/mild/mild_2.js";
-import { repeat } from "./src/spicy/spicy_9.js";
+import { repeat, repeatDemo } from "./src/spicy/spicy_9.js";
   
 
 
 
 
 
-repeat(console.log, 5, 'What up?');
+repeatDemo();
