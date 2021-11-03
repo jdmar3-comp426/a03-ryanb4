@@ -4,8 +4,8 @@ import { allCarStats, getAvgMpgByYearAndHybrid, getMakerHybrids, moreStats } fro
 import { searchByYear, searchHighPower, searchName } from "./src/medium/medium_3.js";
 import {countArray, maxAndMin, sumToString} from "./src/mild/mild_1.js";  
 import { identifyArray, identifyVariable, removeKey, removeKeyNonDestructive, removeKeys } from "./src/mild/mild_2.js";
-import { everyEven, multiplyBy, repeat, repeatDemo, tenTimes, tenTimesFifty } from "./src/spicy/spicy_9.js";
+import { everyEven, multiplyBy, repeat, repeatDemo, someEven, tenTimes, tenTimesFifty } from "./src/spicy/spicy_9.js";
   
 
 
-console.log(everyEven([7, 1, 7, 1, 7, 1, 7], x => x === 7));
+console.log(someEven([4, 3, 2, 1, 0], x => x === 3));
