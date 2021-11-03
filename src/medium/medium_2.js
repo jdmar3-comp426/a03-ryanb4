@@ -142,7 +142,13 @@ export function getAvgMpgByYearAndHybrid() {
     }
 
     //sort the year array
-    yearArray.sort();
+    yearArray = yearArray.sort(
+        function(a, b) {
+            return a - b;
+        }
+    );
+
+    console.log(yearArray);
 
     //create mpg variables
     let hybridCityMpg = 0;
@@ -160,12 +166,12 @@ export function getAvgMpgByYearAndHybrid() {
         //go through the mpg array
         for (let j = 0; j < mpg_data.length; j++) {
             
-            //if the vehicle is a hyrbid then update the hybrid values else update the gas values
-            if (mpg_data[j].hybrid == true) {
+            //if the vehicle is a hybrid then update the hybrid values else update the gas values
+            if (mpg_data[j].hybrid == true && mpg_data[j].year == yearArray[i]) {
                 hybridCityMpg += mpg_data[j].city_mpg;
                 hybridHwMpg += mpg_data[j].highway_mpg;
                 numHybrids++;
-            } else {
+            } else if (mpg_data[j].year == yearArray[i]) {
                 gasCityMpg += mpg_data[j].city_mpg;
                 gasHwMpg += mpg_data[j].highway_mpg;
                 numGas++;
@@ -190,6 +196,8 @@ export function getAvgMpgByYearAndHybrid() {
         finalObj[yearArray[i]] = yearObj;
 
         //now reset all of the objs and variables
+        numGas = 0;
+        numHybrids = 0;
         hybridCityMpg = 0;
         hybridHwMpg = 0;
         gasCityMpg = 0;
@@ -197,7 +205,6 @@ export function getAvgMpgByYearAndHybrid() {
         hybridObj = new Object();
         gasObj = new Object();
         yearObj = new Object();
-
     }
 
     return finalObj;
