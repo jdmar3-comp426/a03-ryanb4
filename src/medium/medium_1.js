@@ -1,3 +1,4 @@
+import { maxAndMin } from "../mild/mild_1.js";
 import {variance} from "./data/stats_helpers.js";
 
 /**
@@ -8,9 +9,12 @@ import {variance} from "./data/stats_helpers.js";
  * prototype functions. Very useful
  */
 export function getSum(array) {
-
+    let sum = 0;
+    for(let i = 0; i < array.length; i++) {
+        sum += array[i];
+    }
+    return sum;
 }
-
 
 /**
  * Calculates the median of an array of numbers.
@@ -22,7 +26,22 @@ export function getSum(array) {
  * console.log(getMedian(array)); // 4.5
  */
 export function getMedian(array) {
+    let sortedArray = array.sort(
+        function(a, b) {
+            return a - b;
+        }
+    );
 
+    let v1, v2;
+
+    //if the array is odd then the median is the middle number
+    if (array.length % 2 == 1) {
+        return sortedArray[Math.floor(array.length / 2)];
+    } else {
+        v1 = array.length / 2
+        v2 = v1 - 1;
+        return (sortedArray[v1] - sortedArray[v2]) / 2 + sortedArray[v2];
+    }
 }
 
 /**
@@ -46,5 +65,18 @@ export function getMedian(array) {
  */
 export function getStatistics(array) {
 
+    let statsObj = new Object();
+    let minMaxObj = maxAndMin(array);
+
+    statsObj.length = array.length;
+    statsObj.sum = getSum(array);
+    statsObj.mean = statsObj.sum / statsObj.length;
+    statsObj.median = getMedian(array);
+    statsObj.min = minMaxObj.min;
+    statsObj.max = minMaxObj.max;
+    statsObj.variance = variance(array, statsObj.mean);
+    statsObj.standard_deviation = Math.sqrt(statsObj.variance);
+
+    return statsObj;
 }
 
